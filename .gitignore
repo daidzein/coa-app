@@ -1,0 +1,22 @@
+# Python & PyInstaller build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+
+# Local audit databases, logs, and environment files
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.env
+
+# Excluded project files & proprietary assets
+Anonymizer.spec
+anonymize_gui.py
+foodex_logo.png.png
+build_freeze.txt
