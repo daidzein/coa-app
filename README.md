@@ -5,9 +5,9 @@ Desktop and web application that generates **Certificate of Analysis (COA) reque
 ## Features
 
 - **FEFO Batch Allocation (`coa_engine.py`):**
-  - Parses shipping plan sheets (`TANGGAL dd - mm - yyyy`), filtering valid 10-digit Sales Orders (`NOMOR SO`) and skipping cancelled (`CANCEL`) or non-customer lines.
+  - Parses shipping plan sheets (`TANGGAL dd - mm - yyyy`), filtering valid 10-digit Sales Orders (`NOMOR SO`) and skipping cancelled (`CANCEL`) or non-customer transfer lines.
   - Prioritizes stock reserved to the matching Sales Order (`Special Stock Number`), then allocates remaining demand by earliest expiration date (`SLED/BBD`).
-  - Uses `Supplier Batch` as the printed COA lot for trading materials (configurable storage locations such as `2002` or material codes starting with `41`).
+  - Substitutes `Supplier Batch` as the printed COA lot for trading materials (configurable storage locations such as `2002` or material codes starting with `41`).
   - Calculates remaining shelf-life percentage relative to `plan_date - ref_offset_days` and flags shortages or unit mismatches with `CEK STOK`.
 - **Native Windows Desktop GUI (`coa_gui.py`):**
   - Tkinter desktop app with background worker threads, live preview table, local SQLite audit history, and `.xlsx` export.
